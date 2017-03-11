@@ -96,7 +96,7 @@ impl From<TotalFloat> for f64 {
 /// Macro for converting f64 to TotalFloat.
 #[macro_export]
 macro_rules! tf {
-    ($float:expr) => { TotalFloat::from($float) }
+    ($float:expr) => { $crate::TotalFloat::from($float) }
 }
 
 /// Macro for creating lists of TotalFloats.
@@ -176,7 +176,7 @@ pub fn merge(mut a: Vec<TotalFloat>,
                 next_b = b.next();
             }
             // If both a and b are empty, exit the loop
-            (None, None) => break
+            (None, None) => break,
         }
     }
 
